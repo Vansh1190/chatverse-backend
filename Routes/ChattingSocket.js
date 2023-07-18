@@ -1,10 +1,12 @@
+const express = require('express');
 const http = require('http');
 const { Server } = require('socket.io');
 
+const app = express();
 const port = 3002;
 
 const SocketA = () => {
-  const server = http.createServer();
+  const server = http.createServer(app);
   // console.log("SOCKEA")
   const io = new Server(server, {
     cors: {
@@ -12,10 +14,7 @@ const SocketA = () => {
       methods: ['GET', 'POST'],
     },
   });
-  console.log(server);
   io.on('connection', (socket) => {
-    console.log('connected');
-
     socket.on('disconnect', () => {
     });
     socket.on('sendMessage', (data) => {
