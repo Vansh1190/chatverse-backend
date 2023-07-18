@@ -1,4 +1,4 @@
-const http = require('https');
+const http = require('http');
 const { Server } = require('socket.io');
 
 const port = 3002;
@@ -8,7 +8,7 @@ const SocketA = () => {
   // console.log("SOCKEA")
   const io = new Server(server, {
     cors: {
-      origin: 'https://chatverse-backend.onrender.com:3002',
+      origin: 'https://localhost:8100',
       methods: ['GET', 'POST'],
     },
   });
