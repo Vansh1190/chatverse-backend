@@ -1,18 +1,17 @@
-const http = require('http');
+const https = require('https');
 const { Server } = require('socket.io');
 
 const port = 3002;
 
 const SocketA = () => {
-  const server = http.createServer();
+  const server = https.createServer();
   // console.log("SOCKEA")
   const io = new Server(server, {
     cors: {
-      origin: 'https://localhost:8100',
+      origin: 'http://localhost:8100',
       methods: ['GET', 'POST'],
     },
   });
-
   io.on('connection', (socket) => {
     console.log('connected');
 
