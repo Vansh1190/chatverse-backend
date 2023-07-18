@@ -1,10 +1,10 @@
-const https = require('https');
+const http = require('http');
 const { Server } = require('socket.io');
 
 const port = 3002;
 
 const SocketA = () => {
-  const server = https.createServer();
+  const server = http.createServer();
   // console.log("SOCKEA")
   const io = new Server(server, {
     cors: {
