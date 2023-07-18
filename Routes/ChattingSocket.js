@@ -12,6 +12,7 @@ const SocketA = () => {
       methods: ['GET', 'POST'],
     },
   });
+  console.log(server);
   io.on('connection', (socket) => {
     console.log('connected');
 
