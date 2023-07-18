@@ -10,7 +10,6 @@ const connectToMongo = require('./connectToMongo');
 const AutoSignin = require('./Routes/AutoSignin');
 const GenOtp = require('./Routes/GenOtp');
 const Verify = require('./Routes/Verify');
-const SocketA = require('./Routes/ChattingSocket');
 const AddFriend = require('./Routes/AddFriend');
 const AllFriends = require('./Routes/AllFriends');
 
@@ -32,7 +31,5 @@ app.use('/auth/genotp', GenOtp);
 app.use('/auto', AutoSignin);
 app.use('/addfriend', AddFriend);
 app.use('/allfriends', AllFriends);
-SocketA();
-
 app.listen(port, () => {
 });
