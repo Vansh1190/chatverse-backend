@@ -3,7 +3,6 @@ const express = require('express');
 const app = express();
 const port = 3002;
 const cors = require('cors');
-const multer = require('multer');
 const Signup = require('./Routes/Signup');
 const upload = require('./Routes/Middleware/upload');
 

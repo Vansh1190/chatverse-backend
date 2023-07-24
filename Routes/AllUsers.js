@@ -1,5 +1,4 @@
 const express = require('express');
-const jwt = require('jsonwebtoken');
 const User = require('../Schema/User');
 const verifyRequest = require('./Middleware/verifyReq');
 require('dotenv').config();

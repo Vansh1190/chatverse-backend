@@ -2,8 +2,6 @@ const jwt = require('jsonwebtoken');
 require('dotenv').config();
 
 const verifyRequest = (req, res, next) => {
-  // res.send('hello');
-  console.log(req.headers);
   if (req.headers.authtoken) {
     jwt.verify(req.headers.authtoken, process.env.Secret, ((err, response) => {
       if (err) {
