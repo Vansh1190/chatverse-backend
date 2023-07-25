@@ -13,11 +13,6 @@ router.post('/', verifyRequest, (req, res) => {
     });
     res.send({ allUsers: AllUsers });
   });
-  // jwt.verify(req.headers.authtoken, process.env.Secret, (err, response) => {
-  //   User.find({ userName: response.userName }).then((e) => {
-  //     res.send(e[0].friends);
-  //   });
-  // });
 });
 
 module.exports = router;

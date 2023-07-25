@@ -14,6 +14,7 @@ const AddFriend = require('./Routes/AddFriend');
 const AllFriends = require('./Routes/AllFriends');
 const GetAllMessages = require('./Routes/GetAllMessages');
 const AllUsers = require('./Routes/AllUsers');
+const OnlineUsers = require('./Routes/OnlineUsers');
 // const imageSc = require('./Schema/imageSc');
 // const upload = multer({
 //   dest: 'Public/',
@@ -25,8 +26,6 @@ app.use(express.urlencoded({ extended: false }));
 
 app.use(express.json());
 app.use(cors());
-// app.use(fileupload());
-// app.use(express.urlencoded({ extended: true }));
 
 connectToMongo();
 app.post('/', (req, res) => {
@@ -38,7 +37,6 @@ app.get('/', (req, res) => {
 
 app.post('/profile', upload.single('uploaded_file'), ((req, res) => {
   res.send('hello');
-  console.log(req.file);
 }));
 
 app.use('/auth', Signup);
@@ -49,5 +47,6 @@ app.use('/addfriend', AddFriend);
 app.use('/allmessages', GetAllMessages);
 app.use('/allfriends', AllFriends);
 app.use('/allusers', AllUsers);
+app.use('/onlineusers', OnlineUsers);
 app.listen(port, () => {
 });

@@ -29,6 +29,11 @@ const User = new Schema({
     type: Boolean,
     default: false,
   },
+  isOnline: {
+    type: Boolean,
+    default: false,
+    // required: true,
+  },
   friends: [{
     userName: {
       type: String,

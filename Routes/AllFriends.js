@@ -7,8 +7,9 @@ const router = express.Router();
 
 router.post('/', (req, res) => {
   jwt.verify(req.body.data.authToken, process.env.Secret, (err, response) => {
-    console.log(response);
+    // console.log(response);
     User.find({ userName: response.userName }).then((e) => {
+      // console.log(e);
       res.send(e[0].friends);
     });
   });
