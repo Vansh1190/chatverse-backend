@@ -13,7 +13,7 @@ router.post('/', async (req, res) => {
     const friend = e.friends.find((f) => f.room === req.body.roomID);
     if (friend.unReadMessages.isPendingRead) {
       axios.post('https://onesignal.com/api/v1/notifications', {
-        include_player_ids: ['1d4b39b5-a94a-4d99-8f6a-7406cf32e636'],
+        include_player_ids: [req.body.notifyID],
         contents: {
           en: req.body.messageToSend,
           es: 'Spanish Message',
