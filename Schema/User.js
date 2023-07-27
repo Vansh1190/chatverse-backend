@@ -34,12 +34,32 @@ const User = new Schema({
     default: false,
     // required: true,
   },
+  notification: {
+    enabled: {
+      type: Boolean,
+      default: false,
+    },
+    notifyID: {
+      type: String,
+      default: '',
+    },
+  },
   friends: [{
     userName: {
       type: String,
     },
     room: {
       type: String,
+    },
+    unReadMessages: {
+      fromDate: {
+        type: String,
+        default: '',
+      },
+      isPendingRead: {
+        type: Boolean,
+        default: true,
+      },
     },
     _id: false,
   }],

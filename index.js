@@ -15,6 +15,8 @@ const AllFriends = require('./Routes/AllFriends');
 const GetAllMessages = require('./Routes/GetAllMessages');
 const AllUsers = require('./Routes/AllUsers');
 const OnlineUsers = require('./Routes/OnlineUsers');
+const UpdateNotification = require('./Routes/UpdateNotification');
+const CheckUnReadMSG = require('./Routes/CheckUnReadMSG');
 // const imageSc = require('./Schema/imageSc');
 // const upload = multer({
 //   dest: 'Public/',
@@ -48,5 +50,7 @@ app.use('/allmessages', GetAllMessages);
 app.use('/allfriends', AllFriends);
 app.use('/allusers', AllUsers);
 app.use('/onlineusers', OnlineUsers);
+app.use('/updatenotifID', UpdateNotification); // Used to update notification id
+app.use('/checkunreadmsg', CheckUnReadMSG);
 app.listen(port, () => {
 });
