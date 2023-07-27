@@ -30,7 +30,6 @@ router.post('/', async (req, res) => {
           Accept: 'text/plain',
         },
       }).then((re) => {
-        console.log(re);
       }).catch((err) => {
         console.log(err.message);
       });
