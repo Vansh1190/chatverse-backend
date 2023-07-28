@@ -29,7 +29,7 @@ router.post('/', async (req, res) => {
           Authorization: process.env.NotifAuth,
           Accept: 'text/plain',
         },
-      }).then((re) => {
+      }).then(() => {
       }).catch((err) => {
         console.log(err.message);
       });
