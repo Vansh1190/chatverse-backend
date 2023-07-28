@@ -23,7 +23,7 @@ router.post('/', async (req, res) => {
         },
         app_id: 'a7443046-e175-4adf-8de9-c2a296e35359',
         name: 'New message',
-        url: `http://localhost:8100/user/${req.body.roomID}/${req.body.sender}/${req.body.userName}`,
+        url: `https://chatuniverse.vercel.app/user/${req.body.roomID}/${req.body.sender}/${req.body.userName}`,
       }, {
         headers: {
           Authorization: process.env.NotifAuth,
