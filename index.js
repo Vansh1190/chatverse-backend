@@ -17,6 +17,7 @@ const AllUsers = require('./Routes/AllUsers');
 const OnlineUsers = require('./Routes/OnlineUsers');
 const UpdateNotification = require('./Routes/UpdateNotification');
 const CheckUnReadMSG = require('./Routes/CheckUnReadMSG');
+const UpdatePass = require('./Routes/UpdatePass');
 // const imageSc = require('./Schema/imageSc');
 // const upload = multer({
 //   dest: 'Public/',
@@ -52,5 +53,6 @@ app.use('/allusers', AllUsers);
 app.use('/onlineusers', OnlineUsers);
 app.use('/updatenotifID', UpdateNotification); // Used to update notification id
 app.use('/checkunreadmsg', CheckUnReadMSG);
+app.use('/updatePass', UpdatePass);
 app.listen(port, () => {
 });
