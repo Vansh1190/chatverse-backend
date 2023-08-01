@@ -43,7 +43,8 @@ router.post('/genotp', (req, res) => {
 
 router.post('/password', (req, res) => {
   console.log(req.headers.host);
-  if (req.headers.host !== 'chatverse-backend.onrender.com') {
+  console.log(req.headers);
+  if (req.headers.origin !== 'https://chatuniverse.vercel.app') {
     return res.send('Not Allowed');
   }
   UserSchema.findOneAndUpdate({ email: req.body.email }, { password: req.body.password })
