@@ -7,8 +7,6 @@ require('dotenv').config();
 const router = express.Router();
 
 router.post('/', async (req, res) => {
-  // console.log(req.body);
-  // let Receiver
   User.findOne({ userName: req.body.userName }).then((e) => {
     const friend = e.friends.find((f) => f.room === req.body.roomID);
     if (friend.unReadMessages.isPendingRead) {

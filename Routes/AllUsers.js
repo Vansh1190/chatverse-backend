@@ -7,7 +7,7 @@ const router = express.Router();
 
 router.post('/', verifyRequest, (req, res) => {
   const AllUsers = [];
-  User.find({}).then((items) => {
+  User.find({ verified: true }).then((items) => {
     items.forEach((e) => {
       AllUsers.push(e.userName);
     });
