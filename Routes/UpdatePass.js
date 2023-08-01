@@ -44,8 +44,8 @@ router.post('/genotp', (req, res) => {
 router.post('/password', (req, res) => {
   console.log(req.headers.host);
   console.log(req.headers);
-  if (req.headers.origin !== 'https://chatuniverse.vercel.app') {
-    return res.send('Not Allowed');
+  if (req.headers.origin !== 'https://chatuniverse.vercel.app' && req.headers.origin !== 'https://chatuniverse.vercel.app') {
+    return res.status(400).send('Not Allowed');
   }
   UserSchema.findOneAndUpdate({ email: req.body.email }, { password: req.body.password })
     .then((e) => {
