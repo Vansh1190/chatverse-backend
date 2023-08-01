@@ -42,7 +42,6 @@ router.post('/genotp', (req, res) => {
 });
 
 router.post('/password', (req, res) => {
- 
   if (req.headers.origin !== 'https://chatuniverse.vercel.app' && req.headers.origin !== 'https://localhost') {
     return res.status(400).send('Not Allowed');
   }
